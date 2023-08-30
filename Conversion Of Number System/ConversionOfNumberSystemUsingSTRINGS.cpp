@@ -1,4 +1,4 @@
-// There are various reasons, regarding why I have to use string everywhere
+// There are various reasons, and bacause of it, I have to use string
 
 #include <iostream>
 #include <conio.h>
