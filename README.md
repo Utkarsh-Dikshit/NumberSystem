@@ -7,4 +7,4 @@ Arithmetic Operation In Number System :- Arithmetic Operation (addition, subtrac
 <br>
 Various programs in cpp with .exe file
 <br>
-Try them
+Try all these programs
