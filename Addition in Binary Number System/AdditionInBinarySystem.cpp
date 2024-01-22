@@ -1,6 +1,8 @@
 // In this method we actually use concept of binary addition to add two binary numbers
 // To understand it, properly go through notebook
 
+// You can also use "deque" of characters to make things easier, as you can add and remove numbers from both ends
+
 #include <iostream>
 #include <conio.h>
 using namespace std;
