@@ -162,17 +162,15 @@ string Bin_Dec(string binary){
 
     // If point (.) is not present (-1)
     if (point == -1){
-        point = size - 1; // starting from the last character
-    }
-    else {
-        point--; // moving to the character before point(.)
+        point = size; // starting from the last character
     }
 
     // Instead of using below loop, you can directly calculate decimal number (Only integral value) by using:--- 
     // decimal = stoi(binary, 0, 2); // '2' decides that it is for binary
+    
     // Below Loop is for calculating integral part only
     int n = 0; //power will start from zero and will increase
-    for (int i = point; i >= 0; i--){
+    for (int i = point-1; i >= 0; i--){
         // Concatenating '-' character at the beginning of an empty string 'result'
         if (binary[i] == '-'){
             result.push_back('-');
@@ -190,8 +188,8 @@ string Bin_Dec(string binary){
 
     // Below Loop is for calculation of part, which is after decimal point only
     n = -1; //power will start from -1 and will decrease
-    for (int i = point + 2; i <= size-1; i++){
-        // Checking that given input is correct or not before performing calculation
+    for (int i = point + 1; i <= size-1; i++){
+        // Checking that given input is correct or not before. performing calculation
         if (binary[i] == '0' || binary[i] == '1'){
             decimal += (binary[i] - '0')*pow(2,n);
             n--;
@@ -212,17 +210,15 @@ string Oct_Dec(string octal){
 
     // If point (.) is not present (-1)
     if (point == -1){
-        point = size - 1; // starting from the last character
-    }
-    else {
-        point--; // moving to the character before point(.)
+        point = size; // starting from the last character
     }
 
     // Instead of using below loop, you can directly calculate decimal number (Only integral value) by using:--- 
     // decimal = stoi(octal, 0, 8); // '8' decides that it is for octal
+
     // Below Loop is for calculating integral part only
     int n = 0; //power will start from zero and will increase
-    for (int i = point; i >= 0; i--){
+    for (int i = point-1; i >= 0; i--){
         // Concatenating '-' character at the beginning of an empty string 'result'
         if (octal[i] == '-'){
             result.push_back('-');
@@ -239,7 +235,7 @@ string Oct_Dec(string octal){
     }
     // Below Loop is for calculation of part, which is after decimal point only
     n = -1; //power will start from -1 and will decrease
-    for (int i = point + 2; i <= size-1; i++){
+    for (int i = point + 1; i <= size-1; i++){
         // Checking that given input is correct or not before performing calculation
         if (octal[i] >= '0' && octal[i] <= '7'){
             decimal += (octal[i] - '0')*pow(8,n);
@@ -261,17 +257,15 @@ string Hex_Dec(string hexa){
 
     // If point (.) is not present (-1)
     if (point == -1){
-        point = size - 1; // starting from the last character
-    }
-    else {
-        point--; // moving to the character before point(.)
+        point = size; // starting from the last character
     }
 
     // Instead of using below loop, you can directly calculate decimal number (Only integral value) by using:--- 
     // decimal = stoi(hexa, 0, 16); // '16' decides that it is for hexa
+    
     // Below Loop is for calculating integral part only
     int n = 0; //power will start from zero and will increase
-    for (int i = point; i >= 0; i--){
+    for (int i = point-1; i >= 0; i--){
         // Concatenating '-' character at the beginning of an empty string 'result'
         if (hexa[i] == '-'){
             result.push_back('-');
@@ -294,7 +288,7 @@ string Hex_Dec(string hexa){
 
     // Below Loop is for calculation of part, which is after decimal point only
     n = -1; //power will start from -1 and will decrease
-    for (int i = point + 2; i <= size-1; i++){
+    for (int i = point + 1; i <= size-1; i++){
         // Condition for number 0-9
         if (hexa[i] >= '0' && hexa[i] <= '9'){
             decimal += (hexa[i] - '0')*pow(16,n);
